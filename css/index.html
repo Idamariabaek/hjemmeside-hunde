@@ -7,6 +7,54 @@
     <title>Index</title>
 </head>
 <body>
-<h1>Welcome</h1>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <a href="./index.html" class="navbar__logo">BestPal</a>
+        <div class="navbar__bars">
+            <i class="fa-solid fa-bars fa-fade"></i>
+        </div>
+        <div class="navbar__menu">
+            <a href="./Soon.html" class="navbar__menu--links">Soon?</a>
+            <a href="./Where.html" class="navbar__menu--links">Where?</a>
+            <a href="./How.html" class="navbar__menu--links">How?</a>
+            <a href="./Who.html" class="navbar__menu--links">Who?</a>
+            <a href="./member.html" class="navbar__menu--links" id="button">Member?</a>
+        </div>
+        <!-- Drop-down menu for mobile -->
+        <div class="mobile-dropdown">
+            <a href="./Soon.html" class="mobile-dropdown__link">Soon?</a>
+            <a href="./Where.html" class="mobile-dropdown__link">Where?</a>
+            <a href="./How.html" class="mobile-dropdown__link">How?</a>
+            <a href="./Who.html" class="mobile-dropdown__link">Who?</a>
+            <a href="./member.html" class="mobile-dropdown__link">Member?</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero__container">
+            <div class="hero__container--left">
+                <h1>Best Pal</h1>
+                <h2>Uniting Dogs & Owners</h2>
+                <p>Become a pal-member</p>
+                <button class="hero__container--btn">
+                    <a href="./member.html">Join</a>
+                </button>
+            </div>
+            <div class="hero__container--right">
+                <img src="images/high-five.jpeg" alt="high-five" class="hero__container--img">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for mobile drop-down menu -->
+    <script>
+        const barsIcon = document.querySelector('.navbar__bars');
+        const mobileDropdown = document.querySelector('.mobile-dropdown');
+
+        barsIcon.addEventListener('click', () => {
+            mobileDropdown.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>

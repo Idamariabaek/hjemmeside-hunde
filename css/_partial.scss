@@ -1,0 +1,105 @@
+@import 'colors';
+@import 'media-queries';
+
+.navbar {
+    background: $orange-gray;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1200px) / 2);
+    z-index: 10;
+    position: relative;
+
+    &__logo {
+        color: $black;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 2rem;
+        margin-left: 24px;
+        @extend %align-center;
+    }
+
+    &__bars {
+        opacity: 0;
+
+        @include tablet {
+            color: $black;
+            opacity: 1;
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            font-size: 2rem;
+        }
+    }
+
+    &__menu {
+        @extend %align-center;
+        list-style: none;
+        text-align: center;
+        margin-right: 24px;
+
+        // Stilregler for links i navbar-menu
+        &--links {
+            color: $black;
+            @extend %align-center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+
+            &:hover {
+                color: $light;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                transition: all 0.3 ease;
+            }
+        }
+
+        #button {
+            padding: 12px 24px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            background: $gray;
+            margin-left: 16px;
+            color: $light;
+
+            &:hover {
+                background: $orange;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    // Mobil version dropdown-menu
+    @media only screen and (max-width: 768px) {
+        .navbar__menu {
+            display: none;
+        }
+
+        .mobile-dropdown {
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: $orange-gray;
+            padding: 20px 0;
+            text-align: center;
+
+            &__link {
+                display: block;
+                margin-bottom: 10px;
+                color: $black;
+                text-decoration: none;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: $light;
+                }
+            }
+        }
+
+        .navbar__bars {
+            opacity: 1;
+        }
+    }
+}
