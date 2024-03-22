@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3bfc6d094b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Index</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <a href="./index.html" class="navbar__logo">BestPal</a>
+            <div class="navbar__bars" id="navbarBars">
+                <i class="fas fa-bars fa-fade"></i>
+            </div>
+
+            <div class="navbar__menu" id="navbarMenu">
+                <a href="./Soon.html" class="navbar__menu--links">Soon?</a>
+                <a href="./Where.html" class="navbar__menu--links">Where?</a>
+                <a href="./How.html" class="navbar__menu--links">How?</a>
+                <a href="./Who.html" class="navbar__menu--links">Who?</a>
+                <a href="./member.html" class="navbar__menu--links" id="button">Member?</a>
+            </div>
+
+            <div class="navbar__dropdown-menu" id="dropdownMenu">
+                <a href="./Soon.html" class="navbar__menu--links">Soon?</a>
+                <a href="./Where.html" class="navbar__menu--links">Where?</a>
+                <a href="./How.html" class="navbar__menu--links">How?</a>
+                <a href="./Who.html" class="navbar__menu--links">Who?</a>
+                <a href="./member.html" class="navbar__menu--links" id="button">Member?</a>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero__container">
+                <div class="hero__container">
+                    <h1>Going to be a dog-parent soon?</h1>
+                    <h2>Or considering adopting one?</h2>
+                    <h1>Here you'll find all necessary information you will need when getting a new family member!</h1>
+                    <p>Before getting a dog, it's important to consider several factors. Firstly, think about your lifestyle and whether it's conducive to having a pet. Dogs require time, attention, and care, so ensure you have the resources to provide for them.</p>
+                    <p>Secondly, research different breeds to find one that matches your energy level, living situation, and preferences. Each breed has unique characteristics and needs.</p>
+                    <p>Additionally, consider the financial aspect of owning a dog. Budget for expenses such as food, veterinary care, grooming, and supplies.</p>
+                    <p>Finally, assess your commitment to training, exercise, and socialization. Dogs thrive on routine and interaction, so be prepared to invest time in their development and well-being.</p>
+                </div>
+                <div class="hero__container--right">
+                    <img src="images/new puppy.jpeg" alt="new-puppy" class="hero__container--img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2024 BestPal. Alle rettigheder forbeholdes.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbarBars = document.getElementById("navbarBars");
+            const dropdownMenu = document.getElementById("dropdownMenu");
+
+            navbarBars.addEventListener("click", function() {
+                dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+</body>
+</html>

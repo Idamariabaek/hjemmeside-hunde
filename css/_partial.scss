@@ -1,6 +1,11 @@
 @import 'colors';
 @import 'media-queries';
 
+%align-center {
+    display: flex;
+    align-items: center;
+}
+
 .navbar {
     background: $orange-gray;
     height: 80px;
@@ -38,7 +43,10 @@
         text-align: center;
         margin-right: 24px;
 
-        // Stilregler for links i navbar-menu
+        @include tablet {
+            display: none;
+        }
+
         &--links {
             color: $black;
             @extend %align-center;
@@ -69,37 +77,45 @@
         }
     }
 
-    // Mobil version dropdown-menu
-    @media only screen and (max-width: 768px) {
-        .navbar__menu {
-            display: none;
+    &__dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: $orange-gray;
+        z-index: 1000;
+        padding: 10px;
+        width: 200px;
+
+        @include tablet {
+            display: block;
         }
 
-        .mobile-dropdown {
-            display: none;
-            position: absolute;
-            top: 80px;
-            left: 0;
-            width: 100%;
-            background: $orange-gray;
-            padding: 20px 0;
+        .navbar__menu--links {
+            color: $black;
+            display: block;
             text-align: center;
+            text-decoration: none;
+            padding: 10px;
 
-            &__link {
-                display: block;
-                margin-bottom: 10px;
-                color: $black;
-                text-decoration: none;
-                transition: color 0.3s;
-
-                &:hover {
-                    color: $light;
-                }
+            &:hover {
+                color: $light;
+                background: $gray;
             }
         }
+    }
 
-        .navbar__bars {
-            opacity: 1;
+    .footer {
+        background: $orange-gray;
+        color: $black;
+        text-align: center;
+        padding: 40px 0;
+        margin-top: 50px;
+        font-size: 1rem;
+    
+        .footer__content {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
     }
 }
